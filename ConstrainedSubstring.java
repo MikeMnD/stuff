@@ -9,7 +9,7 @@ import java.util.TreeSet;
 
 /**
  * We are only interested in the substrings that follow the following properties
- * - The length of a substring lies between K & L
+ * - The length of a substring lies between K and L
  * - The number of unique characters in the substring do not exceed M
  * 
  * Constraints
