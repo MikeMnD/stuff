@@ -1,0 +1,44 @@
+﻿digraph G {
+  "Text(/user/bt/input.txt)" [label="Text(/user/bt/input.txt)" shape=folder];
+  "Text(/user/bt/output)" [label="Text(/user/bt/output)" shape=folder];
+  subgraph "cluster-job1" {
+    label="Crunch Job 1";
+    subgraph "cluster-job1-map" {
+      label = Map; color = blue;
+      "Filter with ZeroLineFilter@880717927@1574619521" [label="Filter with ZeroLineFilter" shape=box];
+      "S1@1653181659@1574619521" [label="S1" shape=box];
+      "Aggregate.count@1386053924@1574619521" [label="Aggregate.count" shape=box];
+    }
+    subgraph "cluster-job1-reduce" {
+      label = Reduce; color = red;
+      "combine@2146480072@1574619521" [label="combine" shape=box];
+      "GBK@1806886039@1574619521" [label="GBK" shape=box];
+    }
+  }
+  subgraph "cluster-job2" {
+    label="Crunch Job 2";
+    subgraph "cluster-job2-map" {
+      label = Map; color = blue;
+      "Aggregate.count@2134119327@1189307466" [label="Aggregate.count" shape=box];
+      "Filter with ZeroLineFilter@1948116678@1189307466" [label="Filter with ZeroLineFilter" shape=box];
+      "S0@871656695@1189307466" [label="S0" shape=box];
+    }
+    subgraph "cluster-job2-reduce" {
+      label = Reduce; color = red;
+      "GBK@205330687@1189307466" [label="GBK" shape=box];
+      "combine@1392412750@1189307466" [label="combine" shape=box];
+    }
+  }
+  "S0@871656695@1189307466" -> "Aggregate.count@2134119327@1189307466";
+  "GBK@1806886039@1574619521" -> "combine@2146480072@1574619521";
+  "S1@1653181659@1574619521" -> "Aggregate.count@1386053924@1574619521";
+  "Text(/user/bt/input.txt)" -> "Filter with ZeroLineFilter@1948116678@1189307466";
+  "Filter with ZeroLineFilter@880717927@1574619521" -> "S1@1653181659@1574619521";
+  "Text(/user/bt/input.txt)" -> "Filter with ZeroLineFilter@880717927@1574619521";
+  "combine@1392412750@1189307466" -> "Text(/user/bt/output)";
+  "Filter with ZeroLineFilter@1948116678@1189307466" -> "S0@871656695@1189307466";
+  "combine@2146480072@1574619521" -> "Text(/user/bt/output)";
+  "Aggregate.count@1386053924@1574619521" -> "GBK@1806886039@1574619521";
+  "Aggregate.count@2134119327@1189307466" -> "GBK@205330687@1189307466";
+  "GBK@205330687@1189307466" -> "combine@1392412750@1189307466";
+}

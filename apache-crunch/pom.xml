@@ -3,11 +3,17 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.dmutti</groupId>
-    <artifactId>apache-crunch</artifactId>
+    <artifactId>apache-crunch-answer</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <repositories>
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+        </repository>
+    </repositories>
     <dependencies>
         <!-- Some care is needed when adding new dependencies with Hadoop. 
             There are lots of libraries on Hadoop's runtime classpath that the client 
@@ -19,12 +25,12 @@
         <dependency>
             <groupId>org.apache.crunch</groupId>
             <artifactId>crunch-core</artifactId>
-            <version>0.11.0</version>
+            <version>0.11.0-cdh5.2.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
-            <version>1.1.2</version>
+            <version>2.5.0-mr1-cdh5.2.0</version>
             <scope>provided</scope>
         </dependency>
         <!-- The following libraries come with Hadoop but are missing from 
@@ -66,6 +72,11 @@
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -88,7 +99,7 @@
                     </descriptors>
                     <archive>
                         <manifest>
-                            <mainClass>com.github.dmutti.WordCount</mainClass>
+                            <mainClass>com.github.dmutti.answer.Question2</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

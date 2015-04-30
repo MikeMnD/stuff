@@ -1,0 +1,24 @@
+0,Lorem ipsum is a pseudo-Latin text
+1,used in web design,
+0,typography, layout, and printing in
+1,place of English to emphasise design
+0,elements over content. It's also called
+1,placeholder (or filler) text. It's a
+0,convenient tool for mock-ups. It helps
+1,to outline the visual elements of a
+0,document or presentation, eg typography,
+1,font, or layout. Lorem ipsum is mostly a
+0,part of a Latin text by the classical
+1,author and philosopher Cicero. Its words
+0,and letters have been changed by addition
+1,or removal, so to deliberately render its
+0,content nonsensical; it's not genuine,
+1,correct, or comprehensible Latin anymore.
+0,While lorem ipsum's still resembles
+1,classical Latin, it actually has no meaning
+0,whatsoever. As Cicero's text doesn't contain
+1,the letters K, W, or Z, alien to latin, these,
+0,and others are often inserted randomly to
+1,mimic the typographic appearence of European
+0,languages, as are digraphs not to be found
+1,in the original.
