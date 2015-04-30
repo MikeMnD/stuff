@@ -1,0 +1,24 @@
+use local
+db.createCollection('data_scientist')
+db.data_scientist.insert({"_id": 1, "price": 1.1 })
+db.data_scientist.insert({"_id": 2, "price": 2.2 })
+db.data_scientist.insert({"_id": 3, "price": 3.3 })
+db.data_scientist.insert({"_id": 4, "price": 4.4 })
+db.data_scientist.insert({"_id": 5, "price": 5.5 })
+db.data_scientist.insert({"_id": 6, "price": 6.6 })
+db.data_scientist.insert({"_id": 7, "price": 7.7 })
+db.data_scientist.insert({"_id": 8, "price": 8.8 })
+db.data_scientist.insert({"_id": 9, "price": 9.9 })
+db.data_scientist.insert({"_id": 10, "price": 10.10 })
+
+var map_function_data_scientist = function() {
+    emit("sum", this.price);
+};
+
+var reduce_function_data_scientist = function(id, prices) {
+    return Array.sum(prices);
+};
+
+db.data_scientist.mapReduce(map_function_data_scientist, reduce_function_data_scientist, { out : "questao_3"})
+
+db.getCollection('questao_3').find({})
