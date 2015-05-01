@@ -99,7 +99,7 @@
                     </descriptors>
                     <archive>
                         <manifest>
-                            <mainClass>com.github.dmutti.answer.Question2</mainClass>
+                            <mainClass>com.github.dmutti.Runner</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
